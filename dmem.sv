@@ -10,7 +10,7 @@ module dmem #(
 	output logic [15:0] rdata
 );
 
-	logic [15:0] memory_array [0:DEPTH -1 ];
+	logic [15:0] memory_array [0:DEPTH -1 ];	
 	assign rdata = memory_array[raddr];
 
 	always_ff @(posedge clk) begin

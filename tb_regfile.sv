@@ -60,16 +60,17 @@ module tb_regfile();
 
         rst_n = 1;
         we = 1;
+        rd_addr = 4'd3;
         rs1_addr = 4'd3;
         rd_data = 16'hABCD;
 
         @(posedge clk);
-
+        #10;
         we = 0;
 
         rs1_addr = 4'd3;
         #2;
-        $display("R7 = %h (expected ABCD)", rs1_data);
+        $display("R3 = %h (expected ABCD)", rs1_data);
 
         if (rs1_data == 16'hABCD) begin
             $display("PASS");
@@ -85,12 +86,12 @@ module tb_regfile();
         rd_data = 16'h1234;
 
         @(posedge clk);
-
+        #1;
         we = 0;
 
         rs1_addr = 4'd7;
         #2;
-        $display("R3 = %h (expected 1234)", rs1_data);
+        $display("R7 = %h (expected 1234)", rs1_data);
 
         if (rs1_data == 16'h1234) begin
             $display("PASS");
