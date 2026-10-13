@@ -1,0 +1,24 @@
+1205 
+1403
+0650
+360A
+280A
+4702
+1A09
+1A14
+6002
+1C07
+F000
+
+/*Addr	Instruction	What it does
+0	ADDI R1, R0, 5	                        R1 = 5
+1	ADDI R2, R0, 3	                        R2 = 3
+2	ADD R3, R1, R2	                        R3 = 8
+3	STORE  [R0+10] = R3	                    mem[10] = 8
+4	LOAD R4,[R0+10]	                        R4 = 8
+5	BEQ R3, R4, +2	                        taken, skips addr 6
+6	ADDI R5, R0, 9	                        should be skipped
+7	ADDI R5, R0, 20	                        R5 = 20
+8	JAL +2	                                jumps to addr 10, R7 = 9
+9	ADDI R6, R0, 7	                        should be skipped
+10	HALT	                                stop*/

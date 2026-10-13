@@ -81,7 +81,7 @@ module tb_decoder();
         #10;
         d_output();
 
-        $display("LOAD test");
+        $display("STORE test");
         instr = 16'b0011_010_011_000101;
         #10;
         d_output();
