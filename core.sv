@@ -20,7 +20,7 @@ module core(
         if(!rst_n) begin
             pc <= 8'b0;
             instr_de <= 16'b0;
-            pc_de <= 8'b0;;
+            pc_de <= 8'b0;
         end
         else begin
             pc <= pc + 8'd1;
