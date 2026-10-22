@@ -12,8 +12,8 @@ module regfile(
 
 logic [15:0] regs [0:7]; //Main array
 
-assign rs1_data = regs[rs1_addr];  //Data from the main array
-assign rs2_data = regs[rs2_addr];
+assign rs1_data = (we && rd_addr == rs1_addr) ? rd_data : regs[rs1_addr];
+assign rs2_data = (we && rd_addr == rs2_addr) ? rd_data : regs[rs2_addr];
 
 integer i;
 
@@ -23,7 +23,7 @@ always_ff @(posedge clk or negedge rst_n) begin
 			regs[i] <= 16'b0;
 	end
 	else if(we) begin
-		regs[rd_addr] = rd_data;
+		regs[rd_addr] <= rd_data;
 	end
 
 end 

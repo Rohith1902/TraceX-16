@@ -1,0 +1,54 @@
+🔧 Still to complete
+- Finish Step 2b
+
+Correct inconsistent signal names such as rd_addr_2b versus rd_addr_wb and mem_wire_wb versus mem_write_wb.
+
+Remove the extra end and duplicate PC/IF-DE always_ff block.
+
+Compile and verify all writeback connections.
+
+- Finish Step 2c
+
+Keep one PC always_ff block that handles branch/jump redirects.
+
+Squash the wrongly fetched instruction and set valid_de to 0 after a redirect.
+
+Test branch and jump behavior.
+
+- Step 2d: Halt and store-to-load forwarding
+
+Add the halted output.
+
+Stop PC updates after HALT reaches the appropriate stage.
+
+Forward pending STORE data to a matching LOAD.
+
+- Fix tb_core.sv
+
+Initialize clk = 0.
+
+Release reset after two clock cycles.
+
+Check register values and mem[10] using your actual instance names.
+
+Run the complete program and verify the expected results.
+
+- Final verification
+
+R1 = 5
+
+R2 = 3
+
+R3 = 8
+
+R4 = 8
+
+R5 = 20
+
+R6 = 0
+
+R7 = 9
+
+mem[10] = 8
+
+Current status: Step 2a is wired up, Step 2b is implemented but needs cleanup and verification, and Step 2c has its condition and target calculations but still needs the PC redirect integrated correctly. Step 2d and the testbench fixes remain.
